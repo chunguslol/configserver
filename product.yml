@@ -1,4 +1,9 @@
 spring:
+  application.name: product
+  config:
+    import:
+      - optional:configserver:http://configserver:8888/
+
   datasource:
     url: jdbc:mysql://mysql:3306/ms_product
     username: root
@@ -40,4 +45,3 @@ logging:
     root: debug
   pattern:
     level: "%5p [${spring.application.name:},%X{traceId:-},%X{spanId:-}]"
-## Imposible nivell
